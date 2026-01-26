@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>533</string>
+	<key>AMApplicationVersion</key>
+	<string>2.10</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>#!/bin/zsh
+set -uo pipefail
+
+LOG="${HOME}/Library/Logs/CompressPDF.log"
+log() {
+  echo "$*" &gt;&gt; "$LOG"
+}
+
+log "---- $(date) ----"
+log "Args: $*"
+log "User: $(id -un)"
+
+GS="/opt/homebrew/bin/gs"
+if [[ ! -x "$GS" ]]; then
+  if [[ -x "/usr/local/bin/gs" ]]; then
+    GS="/usr/local/bin/gs"
+  else
+    GS="$(command -v gs || true)"
+  fi
+fi
+log "GS: ${GS:-&lt;not found&gt;}"
+if [[ -z "${GS:-}" ]]; then
+  osascript -e 'display dialog "Ghostscript (gs) not found. Install with: brew install ghostscript" buttons {"OK"}'
+  exit 1
+fi
+
+PDFSETTINGS="/ebook"
+
+inputs=("$@")
+if [[ ${#inputs[@]} -eq 0 ]]; then
+  while IFS= read -r line; do
+    [[ -z "$line" ]] &amp;&amp; continue
+    inputs+=("$line")
+  done
+fi
+
+log "Inputs: ${inputs[*]}"
+
+if [[ ${#inputs[@]} -eq 0 ]]; then
+  osascript -e 'display dialog "No input files received." buttons {"OK"}'
+  exit 0
+fi
+
+ok_count=0
+fail_count=0
+
+for inpath in "${inputs[@]}"; do
+  log "Processing: $inpath"
+  if [[ ! -f "$inpath" ]]; then
+    log "Missing: $inpath"
+    fail_count=$((fail_count + 1))
+    continue
+  fi
+
+  if [[ "${inpath:l}" != *.pdf ]]; then
+    log "Skip non-PDF: $inpath"
+    continue
+  fi
+
+  if ls -lO "$inpath" | grep -q " uchg "; then
+    osascript -e "display dialog "File is locked and cannot be overwritten:
+${inpath}
+
+Unlock it in Finder (Get Info) and try again." buttons {"OK"}"
+    fail_count=$((fail_count + 1))
+    continue
+  fi
+
+  dir="${inpath:h}"
+  base="${inpath:t:r}"
+  tmpdir="$(mktemp -d -t compresspdf)"
+  tmp="$tmpdir/out.pdf"
+  fallback="${dir}/${base} - compressed.pdf"
+
+  log "Temp: $tmp"
+
+  if "$GS" -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH       -dPDFSETTINGS=${PDFSETTINGS}       -sOutputFile="$tmp" "$inpath"; then
+    mv_err_file="$tmpdir/mv.err"
+    if mv -f "$tmp" "$inpath" 2&gt;"$mv_err_file"; then
+      ok_count=$((ok_count + 1))
+      log "Overwrote: $inpath"
+    else
+      mv_err=$(cat "$mv_err_file" 2&gt;/dev/null || true)
+      log "Overwrite failed: $inpath"
+      log "mv error: $mv_err"
+      if mv -f "$tmp" "$fallback" 2&gt;&gt;"$LOG"; then
+        osascript -e "display dialog "Could not overwrite:
+${inpath}
+
+Saved as:
+${fallback}
+
+Check Privacy &amp; Security permissions for Workflow/Automator." buttons {"OK"}"
+      else
+        osascript -e "display dialog "Could not overwrite or save compressed file for:
+${inpath}
+
+Check Privacy &amp; Security permissions for Workflow/Automator." buttons {"OK"}"
+      fi
+      fail_count=$((fail_count + 1))
+    fi
+  else
+    log "Ghostscript failed: $inpath"
+    osascript -e "display dialog "Ghostscript failed to compress:
+${inpath}" buttons {"OK"}"
+    fail_count=$((fail_count + 1))
+  fi
+
+  rm -rf "$tmpdir"
+done
+
+log "Done: ok=${ok_count} fail=${fail_count}"
+
+if (( ok_count &gt; 0 )); then
+  osascript -e "display notification "Compressed ${ok_count} file(s)" with title "Compress PDF""
+fi
+if (( fail_count &gt; 0 )); then
+  osascript -e "display notification "Failed ${fail_count} file(s)" with title "Compress PDF""
+fi
+</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>0</integer>
+					<key>shell</key>
+					<string>/bin/zsh</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>1AC7F3EC-EE92-4153-B192-E35367FF292A</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>9594CFAA-4232-43DC-942A-22A2250872AA</string>
+				<key>UUID</key>
+				<string>86C68E5D-0C02-430B-B236-2D78CFB544D1</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>309.000000:305.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>applicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>applicationBundleIDsByPath</key>
+		<dict>
+			<key>/System/Library/CoreServices/Finder.app</key>
+			<string>com.apple.finder</string>
+		</dict>
+		<key>applicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
+		<key>applicationPaths</key>
+		<array>
+			<string>/System/Library/CoreServices/Finder.app</string>
+		</array>
+		<key>inputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject</string>
+		<key>outputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>presentationMode</key>
+		<integer>15</integer>
+		<key>processesInput</key>
+		<false/>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<false/>
+		<key>systemImageName</key>
+		<string>NSActionTemplate</string>
+		<key>useAutomaticInputType</key>
+		<false/>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
