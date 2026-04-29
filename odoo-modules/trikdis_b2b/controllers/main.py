@@ -44,6 +44,18 @@ class TrikdisTermsController(TermsController):
 
 
 # ---------------------------------------------------------------------------
+# /privacy — UK portal Privacy Notice
+# ---------------------------------------------------------------------------
+
+class TrikdisPrivacyController(http.Controller):
+    """Serve the UK portal privacy notice."""
+
+    @http.route('/privacy', type='http', auth='public', website=True, sitemap=True)
+    def privacy_notice(self, **kwargs):
+        return request.render('trikdis_b2b.privacy_page', {})
+
+
+# ---------------------------------------------------------------------------
 # Checkout address override — postcode gate
 # ---------------------------------------------------------------------------
 

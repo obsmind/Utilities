@@ -328,6 +328,142 @@
   </template>
 
 
+  <!-- ===== Privacy Notice page ===== -->
+  <template id="privacy_page" name="Privacy Notice — Trikdis UK">
+    <t t-call="website.layout">
+      <t t-set="additional_title">Privacy Notice — Trikdis UK Trade Portal</t>
+      <div id="wrap" class="oe_structure">
+        <section class="pt-5 pb-5" style="background:#fff;">
+          <div class="container" style="max-width:820px;">
+
+            <h1 class="fw-bold mb-2" style="font-size:2rem;">Privacy Notice</h1>
+            <p class="text-muted mb-1" style="font-size:0.9rem;">Trikdis UK Trade Portal — uk.trikdis.com</p>
+            <p class="text-muted mb-4" style="font-size:0.9rem;">Last updated: 29 April 2026</p>
+            <p class="mb-4">This notice explains how <strong>UAB Trikdis</strong> collects, uses, and protects personal data when you use the Trikdis UK trade portal. It supplements the <a href="https://trikdis.com/en/privacy-policy/" target="_blank" rel="noopener">general Trikdis privacy policy</a> with information specific to this portal.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">1. Controller</h2>
+            <p><strong>UAB Trikdis</strong><br/>
+            Draugyst&#279;s g. 17, LT-51229 Kaunas, Lithuania<br/>
+            Company reg. 134764162<br/>
+            Email: <a href="mailto:uk@trikdis.lt">uk@trikdis.lt</a><br/>
+            Phone: <a href="tel:03302237838">0330 223 7838</a></p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">2. Data we collect</h2>
+            <p><strong>Account and trade data</strong></p>
+            <ul>
+              <li>Name, company name, email address, phone number, delivery address</li>
+              <li>Order history, invoices, and payment records (card details are processed by Stripe — we never store them)</li>
+              <li>Portal login credentials (password stored as a one-way hash)</li>
+            </ul>
+            <p><strong>Technical and usage data</strong></p>
+            <ul>
+              <li>IP address, browser type, device type, operating system</li>
+              <li>Pages visited, session duration, referral source</li>
+              <li>Cookie consent preferences</li>
+            </ul>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">3. How and why we use your data</h2>
+            <table class="table table-bordered table-sm mb-0" style="font-size:.9rem;">
+              <thead style="background:#f5f6fb;">
+                <tr><th>Purpose</th><th>Legal basis</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Processing trade account applications and onboarding</td><td>Legitimate interest / pre-contractual steps</td></tr>
+                <tr><td>Fulfilling orders, dispatch, and invoicing</td><td>Contract performance</td></tr>
+                <tr><td>Sending transactional emails (order confirmations, account setup)</td><td>Contract performance</td></tr>
+                <tr><td>Providing technical support</td><td>Contract performance / legitimate interest</td></tr>
+                <tr><td>Website analytics (understanding portal usage)</td><td>Consent (analytics cookies)</td></tr>
+                <tr><td>Targeted advertising on Google and Meta platforms</td><td>Consent (marketing cookies)</td></tr>
+                <tr><td>Compliance with tax, accounting, and legal obligations</td><td>Legal obligation</td></tr>
+              </tbody>
+            </table>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">4. Cookies</h2>
+            <p>We use three categories of cookies. You can accept or reject non-essential cookies using the banner at the bottom of the page. You may change your preferences at any time by revisiting the site in a new browser session.</p>
+
+            <p><strong>Strictly necessary</strong><br/>
+            Required for the portal to function — login session, security (CSRF), shopping basket, and cookie consent storage. These are always active and do not require your consent.</p>
+
+            <p><strong>Analytics cookies</strong><br/>
+            We use <strong>Google Analytics 4</strong> (GA4, measurement ID: G-YFT1MZLHRK) to understand how trade partners use the portal — pages visited, session duration, and general usage patterns. GA4 data is processed by Google LLC (USA) under standard contractual clauses. Analytics cookies are only set after you give consent. Retention: 14 months.</p>
+
+            <p><strong>Marketing cookies</strong><br/>
+            Used for targeted advertising on <strong>Google Ads</strong> and <strong>Meta platforms</strong> (Instagram, Facebook) to reach relevant security installers. Marketing cookies are only set after you give consent. If you reject marketing cookies, you may still see generic (non-targeted) adverts.</p>
+
+            <p>We implement <strong>Google Consent Mode v2</strong> — if you reject analytics or marketing cookies, Google receives anonymised, cookieless signals only. Your choice is stored in a first-party cookie (<code>website_cookies_bar</code>) for 12 months.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">5. Third parties we share data with</h2>
+            <table class="table table-bordered table-sm mb-0" style="font-size:.9rem;">
+              <thead style="background:#f5f6fb;">
+                <tr><th>Provider</th><th>Purpose</th><th>Location</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Stripe, Inc.</td><td>Payment processing</td><td>USA / EU (SCCs)</td></tr>
+                <tr><td>Google LLC</td><td>Analytics (GA4), advertising (Google Ads)</td><td>USA (SCCs)</td></tr>
+                <tr><td>Meta Platforms, Inc.</td><td>Advertising (Instagram, Facebook)</td><td>USA (SCCs)</td></tr>
+                <tr><td>Brevo (Sendinblue)</td><td>Transactional email delivery</td><td>EU</td></tr>
+                <tr><td>VPS hosting provider</td><td>Server infrastructure for this portal</td><td>EU</td></tr>
+              </tbody>
+            </table>
+            <p class="mt-3">We do not sell personal data. All third-party processors are bound by data processing agreements and GDPR-compliant safeguards.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">6. How long we keep data</h2>
+            <ul>
+              <li><strong>Trade account and order data:</strong> duration of the business relationship + 6 years (tax and legal compliance)</li>
+              <li><strong>Support correspondence:</strong> 5 years</li>
+              <li><strong>Analytics data (GA4):</strong> 14 months</li>
+              <li><strong>Cookie consent records:</strong> 12 months</li>
+            </ul>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">7. Your rights</h2>
+            <p>Under UK GDPR and EU GDPR you have the right to:</p>
+            <ul>
+              <li><strong>Access</strong> — request a copy of your personal data</li>
+              <li><strong>Rectification</strong> — correct inaccurate or incomplete data</li>
+              <li><strong>Erasure</strong> — request deletion (subject to legal retention requirements)</li>
+              <li><strong>Restriction</strong> — ask us to limit how we use your data</li>
+              <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+              <li><strong>Portability</strong> — receive your data in a machine-readable format</li>
+              <li><strong>Withdraw consent</strong> — at any time for cookie-based processing, without affecting prior lawful processing</li>
+            </ul>
+            <p>To exercise any right, contact us at <a href="mailto:uk@trikdis.lt">uk@trikdis.lt</a>. We will respond within 30 days.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">8. Supervisory authorities</h2>
+            <p>If you are in the <strong>UK</strong>, you may lodge a complaint with the <strong>Information Commissioner&#8217;s Office (ICO)</strong>:<br/>
+            <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> &#8226; 0303 123 1113</p>
+            <p>If you are in the <strong>EU or Lithuania</strong>, you may contact the <strong>State Data Protection Inspectorate (VDAI)</strong>:<br/>
+            <a href="https://vdai.lrv.lt" target="_blank" rel="noopener">vdai.lrv.lt</a></p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">9. Changes to this notice</h2>
+            <p>We may update this notice when our data practices change. The date at the top of the page reflects the most recent version. Continued use of the portal after an update constitutes acceptance of the revised notice.</p>
+
+            <hr class="my-4"/>
+            <p class="text-muted" style="font-size:0.85rem;">UAB Trikdis &#8226; Draugyst&#279;s g. 17, LT-51229 Kaunas, Lithuania &#8226; Company reg. 134764162</p>
+
+          </div>
+        </section>
+      </div>
+    </t>
+  </template>
+
   <!-- ===== Hide Odoo "Powered by" bar (belt; CSS in custom.css is suspenders) ===== -->
   <template id="hide_brand_promotion" name="Hide Brand Promotion"
             inherit_id="web.brand_promotion" active="True">
@@ -350,14 +486,14 @@
             inherit_id="website.cookies_bar" active="True">
 
     <!-- Text: shorter, B2B appropriate -->
-    <xpath expr="//span[contains(@class,'pe-1')]" position="replace">
+    <xpath expr="//span[hasclass('pe-1')]" position="replace">
       <span class="pe-1">We use analytics and marketing cookies to improve the portal and run targeted advertising. Essential cookies are always active.</span>
     </xpath>
 
-    <!-- Link: trikdis.com privacy policy (covers data processing + cookies) -->
-    <xpath expr="//a[contains(@class,'o_cookies_bar_text_policy')]" position="replace">
-      <a href="https://trikdis.com/en/privacy-policy/" target="_blank" rel="noopener"
-         class="o_cookies_bar_text_policy btn btn-link btn-sm px-0">Privacy Policy</a>
+    <!-- Link: UK portal privacy notice -->
+    <xpath expr="//a[hasclass('o_cookies_bar_text_policy')]" position="replace">
+      <a href="/privacy"
+         class="o_cookies_bar_text_policy btn btn-link btn-sm px-0">Privacy Notice</a>
     </xpath>
 
     <!-- Buttons: clearer labelling, equal visual weight -->
