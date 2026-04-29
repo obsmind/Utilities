@@ -1,0 +1,2 @@
+/* Hide Odoo brand promotion bar */
+.o_brand_promotion { display: none !important; }

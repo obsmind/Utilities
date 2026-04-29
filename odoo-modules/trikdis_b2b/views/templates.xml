@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- ===== Trade account thank-you page ===== -->
+  <template id="thank_you" name="Trikdis — Thank You">
+    <t t-call="website.layout">
+      <t t-set="additional_title">Account Ready — Trikdis UK</t>
+      <div id="wrap" class="oe_structure">
+        <section class="py-5 text-center" style="min-height:60vh;display:flex;align-items:center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <div style="font-size:4rem;margin-bottom:1rem">&#10003;</div>
+                <h2 class="fw-bold mb-3">You&#39;re in — welcome to Trikdis UK</h2>
+                <p class="lead text-muted mb-4">Your trade account is active and Standard Trade pricing is applied. Start browsing and placing orders.</p>
+                <a href="/shop" class="btn btn-primary px-4">Browse Products</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </t>
+  </template>
+
+  <!-- ===== Terms and Conditions page ===== -->
+  <template id="terms_page" name="Terms and Conditions — Trikdis UK">
+    <t t-call="website.layout">
+      <t t-set="additional_title">Terms and Conditions — Trikdis UK</t>
+      <div id="wrap" class="oe_structure">
+        <section class="pt-5 pb-5" style="background:#fff;">
+          <div class="container" style="max-width:820px;">
+
+            <h1 class="fw-bold mb-2" style="font-size:2rem;">Business Terms and Conditions of Sale</h1>
+            <p class="text-muted mb-4" style="font-size:0.9rem;">Last updated: 27 April 2026</p>
+            <p class="mb-4">These Business Terms and Conditions of Sale apply to orders placed through the Trikdis UK trade portal at <strong>uk.trikdis.com</strong> and to any related quotation, order confirmation, invoice, or written sales communication issued by TRIKDIS UAB.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">1. About us</h2>
+            <p>The legal seller of products supplied through this portal is <strong>TRIKDIS UAB</strong>, a company incorporated in Lithuania, company registration number <strong>134764162</strong>, with its registered office at <strong>Draugyst&#279;s g. 17, LT-51229 Kaunas, Lithuania</strong>.</p>
+            <p>TRIKDIS UAB is also the manufacturer of TRIKDIS-branded products.</p>
+            <p>References on this website to <strong>&#8220;Trikdis UK&#8221;</strong>, <strong>&#8220;we&#8221;</strong>, <strong>&#8220;us&#8221;</strong>, or <strong>&#8220;our&#8221;</strong> refer to TRIKDIS UAB operating this Great Britain trade portal, unless the context clearly states otherwise. &#8220;Trikdis UK&#8221; is used for branding and trade-portal purposes only and does not refer to a separate UK legal entity.</p>
+            <p>Contact email: <strong><a href="mailto:hello@uk.trikdis.com">hello@uk.trikdis.com</a></strong><br/>
+            Telephone: <strong><a href="tel:03302237838">0330 223 7838</a></strong><br/>
+            UK VAT number: <em>[to be confirmed once issued]</em></p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">2. Business customers only</h2>
+            <p>This portal is intended only for business customers, professional security installers, distributors, integrators, monitoring stations, and other customers acting wholly or mainly for business purposes.</p>
+            <p>By placing an order, you confirm that:</p>
+            <ul>
+              <li>you are acting wholly or mainly in the course of a business, trade, craft, or profession;</li>
+              <li>you are not acting as a consumer;</li>
+              <li>you have authority to place the order on behalf of the business named in the order; and</li>
+              <li>the products are being purchased for business use, professional installation, resale, integration, or another business purpose.</li>
+            </ul>
+            <p>We may refuse or cancel an order if we reasonably believe that it has been placed by or for a consumer.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">3. Application of these terms</h2>
+            <p>These terms apply to all quotations, orders, sales, and deliveries made through this portal or otherwise accepted by us for supply in Great Britain.</p>
+            <p>These terms apply to the exclusion of any terms that you seek to impose or incorporate, including any purchase terms, procurement terms, or other buyer terms, unless we expressly agree otherwise in writing.</p>
+            <p>If we issue a written quotation, order confirmation, invoice, or separate agreement that expressly conflicts with these terms, the specific written document will prevail to the extent of that conflict.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">4. Sales territory</h2>
+            <p>We currently sell and deliver through this portal only within <strong>Great Britain</strong>, meaning England, Scotland, and Wales.</p>
+            <p>We do not currently accept orders for delivery to Northern Ireland, the Channel Islands, the Isle of Man, or other territories unless we expressly agree this in writing before accepting the order.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">5. Products and product information</h2>
+            <p>Product descriptions, specifications, compatibility information, images, manuals, certificates, and other product information are provided in good faith for business guidance.</p>
+            <p>Images are illustrative. Packaging, accessories, firmware, documentation, specifications, or product details may change where this does not materially reduce the essential functionality of the product ordered.</p>
+            <p>You are responsible for checking that the products are suitable for your intended installation, panel type, communication path, monitoring setup, site conditions, power supply, regulatory obligations, insurer requirements, and customer requirements.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">6. Professional installation and use</h2>
+            <p>TRIKDIS products must be installed, configured, commissioned, maintained, and used by competent qualified personnel in accordance with the relevant product manual, technical documentation, good industry practice, and applicable law.</p>
+            <p>You must not remove, obscure, or alter any certification, conformity, serial number, traceability, safety, or identification markings.</p>
+            <p>Unauthorised changes, modifications, repairs, firmware tampering, misuse, incorrect installation, or use outside the product documentation may void the warranty and may affect product compliance.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">7. Great Britain product compliance</h2>
+            <p>TRIKDIS UAB is the legal seller and manufacturer of TRIKDIS-branded products supplied through this portal.</p>
+            <p>TRIKDIS UAB will take reasonable steps to ensure that TRIKDIS-branded products supplied through this portal are placed on the Great Britain market with the product documentation, conformity information, markings, instructions, and safety information applicable to TRIKDIS as manufacturer and seller.</p>
+            <p>Where any UK-established importer, authorised representative, fulfilment provider, distributor, or other economic-operator details are required by applicable law, such details will be provided on the product, packaging, invoice, accompanying documentation, or other appropriate material.</p>
+            <p>You are responsible for ensuring that your installation, configuration, resale, onward supply, and use of the products comply with laws, standards, and regulatory requirements that apply to you and your customers.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">8. Order process and contract formation</h2>
+            <p>Product listings, prices, stock information, marketing material, and website content are invitations to treat and do not constitute a binding offer by us to sell.</p>
+            <p>Your order is an offer to buy the products in accordance with these terms.</p>
+            <p>An automated email acknowledging receipt of your order does not mean that your order has been accepted. A contract is formed only when we issue a written order acceptance, dispatch confirmation, or invoice, or when we dispatch the products, whichever happens first.</p>
+            <p>We may reject or cancel an order before acceptance, including for stock, pricing, compliance, territory, customer validation, payment, credit, or suspected consumer-purchase reasons.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">9. Prices and VAT</h2>
+            <p>Prices are shown in GBP.</p>
+            <p>Until our UK VAT registration number is issued, prices shown on the portal are the total price payable by the customer, unless stated otherwise. We will not show UK VAT as a separate item on invoices until our UK VAT registration number has been issued.</p>
+            <p>We may set our prices to account for VAT that may become payable to HMRC from the effective date of UK VAT registration. Once our UK VAT registration number has been issued, we may issue replacement VAT invoices where required.</p>
+            <p>After our UK VAT registration number is issued, prices will be treated as inclusive of UK VAT unless the website, quotation, invoice, or order confirmation states otherwise. VAT invoices will show the applicable VAT amount and our UK VAT registration number.</p>
+            <p>Delivery charges, customs charges, special handling charges, and other additional charges will be shown separately where applicable.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">10. Payment</h2>
+            <p>Unless we have approved credit terms for you in writing, payment is due in full before dispatch.</p>
+            <p>We may withhold dispatch until payment has been received in cleared funds.</p>
+            <p>Where we have approved credit terms in writing after customer validation, payment is due within the period stated on the invoice or written credit approval. If no period is stated, payment is due within 30 days of the invoice date.</p>
+            <p>Payments must be made without set-off, counterclaim, withholding, or deduction, except where required by law or agreed by us in writing.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">11. Late payment</h2>
+            <p>If an invoice is not paid when due, we may:</p>
+            <ul>
+              <li>suspend further deliveries or order processing;</li>
+              <li>suspend or restrict credit terms;</li>
+              <li>require payment in advance for future orders;</li>
+              <li>charge statutory interest and compensation under the Late Payment of Commercial Debts legislation; and</li>
+              <li>recover reasonable debt-recovery costs where permitted by law.</li>
+            </ul>
+            <p>These rights are in addition to any other rights or remedies available to us.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">12. Delivery</h2>
+            <p>Delivery dates and dispatch estimates are estimates only. Time for delivery is not of the essence unless we expressly agree this in writing.</p>
+            <p>We may deliver orders in instalments.</p>
+            <p>We are not liable for delay or failure to deliver caused by circumstances outside our reasonable control, including carrier delay, warehouse disruption, customs or compliance checks, incorrect delivery information, failed delivery attempts, or your failure to cooperate with delivery.</p>
+            <p>You must ensure that the delivery address and contact details provided with the order are complete and accurate.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">13. Risk and title</h2>
+            <p>Risk in the products passes to you when the products are delivered to the delivery address, collected by you or your carrier, or made available for collection where collection has been agreed.</p>
+            <p>If delivery fails because you do not accept delivery, provide incorrect delivery information, or fail to cooperate with delivery, risk passes at the time of the failed delivery attempt.</p>
+            <p>Title to the products does not pass to you until we have received payment in full, in cleared funds, for the products and any other sums due from you to us.</p>
+            <p>Until title passes, you must store the products safely, keep them in good condition, keep them identifiable as our property, and not pledge or charge them as security.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">14. Inspection on delivery</h2>
+            <p>You must inspect the products promptly after delivery.</p>
+            <p>You must notify us in writing within <strong>5 business days</strong> after delivery if products are visibly damaged in transit, missing, or materially different from the products ordered.</p>
+            <p>If you do not notify us within that period, the delivery will be treated as accepted for visible damage, shortage, or incorrect-product issues, except where the issue could not reasonably have been identified during normal inspection.</p>
+            <p>Latent defects must be notified promptly after discovery and within the applicable warranty period.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">15. 30-day returns policy for non-faulty products</h2>
+            <p>We offer a 30-day return policy for non-faulty products purchased through this portal.</p>
+            <p>To request a return, you must contact us within <strong>30 days</strong> of delivery and obtain return instructions before sending the products back.</p>
+            <p>Non-faulty products must be returned:</p>
+            <ul>
+              <li>unused;</li>
+              <li>complete with all accessories, manuals, packaging, and supplied items;</li>
+              <li>in original or equivalent protective packaging;</li>
+              <li>in resaleable condition; and</li>
+              <li>to the return address provided by us, which will normally be the same fulfilment address used for delivery unless we specify otherwise.</li>
+            </ul>
+            <p>Unless we agree otherwise, you are responsible for return shipping costs and for the risk of loss or damage during return shipping for non-faulty returns.</p>
+            <p>We may reject a non-faulty return or reduce the refund if the returned products are used, damaged, incomplete, missing packaging or accessories, or otherwise not in resaleable condition.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">16. Refunds for accepted returns</h2>
+            <p>For accepted non-faulty returns, we will issue a refund within <strong>10 working days</strong> after we receive the returned products and confirm that they meet the return conditions.</p>
+            <p>Refunds will normally be made using the original payment method unless we agree another method.</p>
+            <p>Original delivery charges, expedited shipping charges, special handling charges, and return shipping costs are not refundable unless the return is due to our error or a confirmed product fault.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">17. Faulty products and warranty claims</h2>
+            <p>If you believe a product is faulty, you must contact us and follow our return material authorisation or warranty claim process before returning the product.</p>
+            <p>We may require information such as product model, serial number, invoice number, installation details, photographs, logs, test results, fault description, and configuration details.</p>
+            <p>Where a returned product is confirmed by us to be faulty and covered by warranty, we will provide the warranty remedy set out in these terms.</p>
+            <p>Where a returned product is not faulty, is not covered by warranty, or has been damaged by incorrect installation or misuse, we may return it to you and may charge reasonable inspection, handling, and shipping costs.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">18. Warranty</h2>
+            <p>Subject to these terms, TRIKDIS UAB warrants that TRIKDIS-branded products supplied through this portal will be materially free from defects in materials and workmanship for <strong>24 months from the invoice date</strong>.</p>
+            <p>This warranty applies only where the products have been properly stored, transported, installed, configured, commissioned, used, and maintained in accordance with the relevant product documentation and applicable instructions.</p>
+            <p>If a valid warranty claim is accepted, our sole obligation will be, at our option, to:</p>
+            <ul>
+              <li>repair the product;</li>
+              <li>replace the product;</li>
+              <li>issue a credit note; or</li>
+              <li>refund the price paid for the defective product.</li>
+            </ul>
+            <p>Replacement or repaired products may be new, refurbished, or functionally equivalent. Any repaired or replacement product will be covered for the remainder of the original warranty period unless we state otherwise in writing.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">19. Warranty exclusions</h2>
+            <p>The warranty does not apply to defects, faults, damage, or performance issues caused by:</p>
+            <ul>
+              <li>incorrect installation, wiring, configuration, commissioning, or maintenance;</li>
+              <li>use by unqualified or unauthorised personnel;</li>
+              <li>improper power supply, overvoltage, surge, lightning, or electrical disturbance;</li>
+              <li>water ingress, corrosion, unsuitable environmental conditions, or physical damage;</li>
+              <li>accident, negligence, misuse, abuse, or abnormal operating conditions;</li>
+              <li>use outside the product documentation or intended purpose;</li>
+              <li>modification, tampering, unauthorised repair, or firmware alteration;</li>
+              <li>third-party equipment, panels, accessories, software, cloud platforms, telecom networks, SIM services, monitoring stations, or integrations;</li>
+              <li>network outages, signal coverage issues, internet failure, carrier restrictions, or third-party service interruption;</li>
+              <li>normal wear and tear; or</li>
+              <li>removal, alteration, or damage to serial numbers, labels, conformity markings, or traceability information.</li>
+            </ul>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">20. Technical support and guidance</h2>
+            <p>Any technical support, compatibility guidance, setup advice, documentation, or troubleshooting assistance we provide is ancillary to the sale of products.</p>
+            <p>Unless we enter into a separate written services agreement, technical support does not constitute site design, security-system design, installation, commissioning, certification, monitoring, managed services, or a service-level commitment.</p>
+            <p>You remain responsible for the design, installation, testing, commissioning, compliance, and handover of the system into which the products are installed.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">21. Software, cloud, app, connectivity, and third-party services</h2>
+            <p>Some products may connect to or interact with software, mobile applications, Protegus services, cloud platforms, telecom networks, SIM services, app stores, payment processors, monitoring platforms, or other third-party services.</p>
+            <p>The availability and performance of those services may depend on third parties, network coverage, internet availability, customer configuration, subscription status, and local conditions.</p>
+            <p>Unless expressly stated otherwise in a separate written agreement, the sale of hardware does not include:</p>
+            <ul>
+              <li>guaranteed mobile network coverage;</li>
+              <li>guaranteed internet or cloud availability;</li>
+              <li>guaranteed app-store, payment-provider, or third-party platform availability;</li>
+              <li>a monitoring service;</li>
+              <li>a telecom service-level commitment; or</li>
+              <li>any service-level agreement.</li>
+            </ul>
+            <p>Separate terms, platform rules, fair-usage rules, subscription terms, carrier terms, or third-party terms may apply to such services.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">22. Resale and onward supply</h2>
+            <p>If you resell, install, integrate, or otherwise supply the products to your own customers, you are responsible for ensuring that your own sales terms, customer documentation, installation records, warranties, data-protection notices, and support arrangements are suitable for your business and comply with applicable law.</p>
+            <p>You must not make any representation, warranty, guarantee, or commitment on behalf of TRIKDIS UAB unless we have expressly authorised it in writing.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">23. Limitation of liability</h2>
+            <p>Nothing in these terms excludes or limits liability for:</p>
+            <ul>
+              <li>death or personal injury caused by negligence;</li>
+              <li>fraud or fraudulent misrepresentation;</li>
+              <li>breach of title obligations; or</li>
+              <li>any other liability that cannot legally be excluded or limited.</li>
+            </ul>
+            <p>Subject to the above, we will not be liable for:</p>
+            <ul>
+              <li>loss of profit;</li>
+              <li>loss of revenue;</li>
+              <li>loss of business;</li>
+              <li>loss of goodwill;</li>
+              <li>loss of expected savings;</li>
+              <li>business interruption;</li>
+              <li>loss or corruption of data;</li>
+              <li>indirect or consequential loss;</li>
+              <li>third-party claims against you or your customers; or</li>
+              <li>losses caused by third-party networks, services, platforms, telecom providers, monitoring stations, or integrations.</li>
+            </ul>
+            <p>Subject to the exclusions above, our total aggregate liability arising out of or in connection with any order, product, delivery, return, warranty claim, or related matter will not exceed the price paid by you for the products under the relevant order giving rise to the claim.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">24. Force majeure</h2>
+            <p>We are not liable for delay or failure to perform our obligations where caused by events outside our reasonable control, including supply-chain disruption, carrier disruption, customs delays, warehouse disruption, natural events, war, terrorism, civil unrest, industrial action, epidemic, pandemic, power failure, network failure, cyber incident, regulatory change, or failure of third-party suppliers or service providers.</p>
+            <p>If such an event materially affects our ability to fulfil an accepted order, we may delay delivery, cancel the affected order, or offer a reasonable alternative.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">25. Confidentiality and business information</h2>
+            <p>Any non-public pricing, discount, technical, commercial, account, or business information we provide to you is confidential unless we state otherwise in writing or the information is already lawfully public.</p>
+            <p>You must not disclose such information to third parties except where required for your lawful business use of the products or where required by law.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">26. Data protection</h2>
+            <p>We may process business contact details, account information, order information, payment information, delivery information, and support information for the purposes of operating the portal, processing orders, providing support, managing accounts, complying with law, and protecting our legitimate business interests.</p>
+            <p>Personal data will be handled in accordance with our privacy notice, which should be read together with these terms.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">27. Changes to these terms</h2>
+            <p>We may update these terms from time to time.</p>
+            <p>The terms that apply to your order are the terms in force at the time we accept your order, unless a change is required by law or agreed by both parties in writing.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">28. Notices</h2>
+            <p>Any notice or formal communication under these terms must be sent in writing by email or by another method agreed in writing.</p>
+            <p>Notices to us should be sent to <strong><a href="mailto:hello@uk.trikdis.com">hello@uk.trikdis.com</a></strong> unless we specify another address.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">29. Severability</h2>
+            <p>If any provision of these terms is found to be invalid, unlawful, or unenforceable, that provision will be treated as modified to the minimum extent necessary to make it valid, lawful, and enforceable. If modification is not possible, the relevant provision will be treated as deleted. The remaining provisions will continue in full force and effect.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">30. No waiver</h2>
+            <p>A delay or failure by us to exercise any right or remedy does not waive that right or remedy.</p>
+            <p>A waiver is effective only if given in writing and applies only to the specific circumstances for which it is given.</p>
+
+            <hr class="my-4"/>
+
+            <h2 class="fw-semibold mt-4 mb-3" style="font-size:1.2rem;">31. Governing law and jurisdiction</h2>
+            <p>These terms, any order, and any dispute or claim arising out of or in connection with them, including non-contractual disputes or claims, are governed by the laws of England and Wales.</p>
+            <p>The courts of England and Wales have exclusive jurisdiction, except that we may bring proceedings against you in any jurisdiction where you are established, operate, hold assets, or resell the products.</p>
+
+            <hr class="my-4"/>
+            <p class="text-muted" style="font-size:0.85rem;">TRIKDIS UAB &#8226; Draugyst&#279;s g. 17, LT-51229 Kaunas, Lithuania &#8226; Company reg. 134764162</p>
+
+          </div>
+        </section>
+      </div>
+    </t>
+  </template>
+
+
+</odoo>
