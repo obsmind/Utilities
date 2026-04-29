@@ -132,6 +132,38 @@ def post_install(env):
             website.write({'custom_code_head': head + '\n' + hide_css})
 
     # ------------------------------------------------------------------
+    # 6b. Sweep all page views that still link to trikdis.com privacy policy
+    #
+    #     The homepage and any other editor-created pages embed their own
+    #     footer section directly in arch_db (no stable external ID), so we
+    #     can't reach them via env.ref().  Search by content instead.
+    # ------------------------------------------------------------------
+    old_privacy = 'https://trikdis.com/en/privacy-policy/'
+    views_to_fix = env['ir.ui.view'].search([
+        ('arch_db', 'like', old_privacy),
+    ])
+    for v in views_to_fix:
+        arch = v.arch
+        new_arch = arch.replace(
+            'href="https://trikdis.com/en/privacy-policy/"',
+            'href="/privacy"',
+        )
+        new_arch = new_arch.replace('>Privacy Policy<', '>Privacy Notice<')
+        new_arch = new_arch.replace(
+            '>Privacy Policy ↗<',
+            '>Privacy Notice<',
+        )
+        # Strip external-link attributes when pointing to our own page
+        import re as _re
+        new_arch = _re.sub(
+            r'(<a[^>]+href="/privacy"[^>]*) target="_blank" rel="noopener"',
+            r'\1',
+            new_arch,
+        )
+        if new_arch != arch:
+            v.write({'arch': new_arch})
+
+    # ------------------------------------------------------------------
     # 6. Enable native cookie consent bar + clear Odoo's native GA4 field
     #
     #    GCM v2 is already wired in Odoo 18: sets all consent to denied by
