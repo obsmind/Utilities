@@ -14,4 +14,5 @@
     'installable': True,
     'auto_install': False,
     'post_init_hook': 'post_install',
+    'post_migrate': 'post_install',
 }

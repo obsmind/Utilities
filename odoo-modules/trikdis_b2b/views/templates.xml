@@ -336,4 +336,40 @@
     </xpath>
   </template>
 
+  <!-- ===== Cookie consent bar — text + button overrides ===== -->
+  <!--
+    Uses Odoo 18's native cookie bar (website.cookies_bar) which already
+    implements Google Consent Mode v2: sets all consent to 'denied' by default
+    and updates to 'granted' when the user accepts via the
+    'optionalCookiesAccepted' DOM event.
+
+    Enabled by: website.cookies_bar = True (set in post_install hook).
+    Styling: see static/src/css/custom.css  (#website_cookies_bar section).
+  -->
+  <template id="cookies_bar_custom" name="Trikdis — Cookies Bar"
+            inherit_id="website.cookies_bar" active="True">
+
+    <!-- Text: shorter, B2B appropriate -->
+    <xpath expr="//span[contains(@class,'pe-1')]" position="replace">
+      <span class="pe-1">We use analytics and marketing cookies to improve the portal and run targeted advertising. Essential cookies are always active.</span>
+    </xpath>
+
+    <!-- Link: point to /terms (no separate /cookie-policy page) -->
+    <xpath expr="//a[contains(@class,'o_cookies_bar_text_policy')]" position="replace">
+      <a href="/terms" class="o_cookies_bar_text_policy btn btn-link btn-sm px-0">Terms &amp; Privacy</a>
+    </xpath>
+
+    <!-- Buttons: clearer labelling, equal visual weight -->
+    <xpath expr="//a[@id='cookies-consent-essential']" position="replace">
+      <a href="#" id="cookies-consent-essential" role="button"
+         class="js_close_popup btn btn-outline-light rounded-pill btn-sm px-3 me-2">Reject all</a>
+    </xpath>
+    <xpath expr="//a[@id='cookies-consent-all']" position="replace">
+      <a href="#" id="cookies-consent-all" role="button"
+         class="js_close_popup btn btn-warning rounded-pill btn-sm px-3 fw-bold"
+         style="color:#1e2d5e">Accept all</a>
+    </xpath>
+
+  </template>
+
 </odoo>

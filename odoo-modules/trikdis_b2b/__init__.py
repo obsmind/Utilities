@@ -131,3 +131,25 @@ def post_install(env):
         hide_css = '<style>.o_brand_promotion{display:none!important}</style>'
         if hide_css not in head:
             website.write({'custom_code_head': head + '\n' + hide_css})
+
+    # ------------------------------------------------------------------
+    # 6. Enable native cookie consent bar + clear Odoo's native GA4 field
+    #
+    #    GCM v2 is already wired in Odoo 18: sets all consent to denied by
+    #    default, updates to granted on the 'optionalCookiesAccepted' event.
+    #
+    #    GA4 is loaded conditionally via cookie consent only — the Odoo
+    #    native google_analytics_key field must be empty so Odoo does NOT
+    #    inject gtag.js unconditionally on every page load.
+    #
+    #    To re-add GA4 tracking, update cookie_config.js (GA4_ID constant)
+    #    and ensure google_analytics_key remains empty here.
+    # ------------------------------------------------------------------
+    if website:
+        vals = {}
+        if not website.cookies_bar:
+            vals['cookies_bar'] = True
+        if website.google_analytics_key:
+            vals['google_analytics_key'] = False
+        if vals:
+            website.write(vals)

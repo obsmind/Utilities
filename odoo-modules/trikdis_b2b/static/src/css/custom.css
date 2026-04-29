@@ -1,2 +1,29 @@
 /* Hide Odoo brand promotion bar */
 .o_brand_promotion { display: none !important; }
+
+/* ── Cookie consent bar — dark navy theme ─────────────────────────── */
+#website_cookies_bar .modal-content {
+    background: #1e2d5e !important;
+    border-top: 2px solid #2a3d7a;
+    border-radius: 0 !important;
+}
+#website_cookies_bar p,
+#website_cookies_bar span.pe-1 {
+    color: #e8eaf6 !important;
+    margin-bottom: 0;
+    font-size: .9rem;
+}
+#website_cookies_bar .btn-outline-light {
+    border-color: rgba(255,255,255,.45) !important;
+    color: rgba(255,255,255,.85) !important;
+}
+#website_cookies_bar .btn-outline-light:hover {
+    background: rgba(255,255,255,.1) !important;
+}
+#website_cookies_bar .btn-link {
+    color: #aab !important;
+    font-size: .8rem;
+}
+#website_cookies_bar .btn-link:hover {
+    color: #ccd !important;
+}
