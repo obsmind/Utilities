@@ -354,9 +354,10 @@
       <span class="pe-1">We use analytics and marketing cookies to improve the portal and run targeted advertising. Essential cookies are always active.</span>
     </xpath>
 
-    <!-- Link: point to /terms (no separate /cookie-policy page) -->
+    <!-- Link: trikdis.com privacy policy (covers data processing + cookies) -->
     <xpath expr="//a[contains(@class,'o_cookies_bar_text_policy')]" position="replace">
-      <a href="/terms" class="o_cookies_bar_text_policy btn btn-link btn-sm px-0">Terms &amp; Privacy</a>
+      <a href="https://trikdis.com/en/privacy-policy/" target="_blank" rel="noopener"
+         class="o_cookies_bar_text_policy btn btn-link btn-sm px-0">Privacy Policy</a>
     </xpath>
 
     <!-- Buttons: clearer labelling, equal visual weight -->
