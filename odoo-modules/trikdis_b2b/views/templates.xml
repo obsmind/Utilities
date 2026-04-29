@@ -328,4 +328,12 @@
   </template>
 
 
+  <!-- ===== Hide Odoo "Powered by" bar (belt; CSS in custom.css is suspenders) ===== -->
+  <template id="hide_brand_promotion" name="Hide Brand Promotion"
+            inherit_id="web.brand_promotion" active="True">
+    <xpath expr="//div[hasclass('o_brand_promotion')]" position="replace">
+      <div class="o_brand_promotion" style="display:none"/>
+    </xpath>
+  </template>
+
 </odoo>
