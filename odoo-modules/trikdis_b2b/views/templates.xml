@@ -509,4 +509,20 @@
 
   </template>
 
+  <!-- ===== Umami analytics — cookieless, fires on every page view ===== -->
+  <!--
+    Self-hosted at https://stats.uk.trikdis.com
+    No cookies, no consent needed under PECR/GDPR.
+    Injected via QWeb inheritance (custom_code_head sanitises <script> tags).
+    Website ID: 965949ea-0b4f-40bc-b5f1-3e04208b3492
+  -->
+  <template id="umami_tracking" name="Trikdis — Umami Analytics"
+            inherit_id="website.layout" active="True">
+    <xpath expr="//head" position="inside">
+      <script defer="defer"
+              src="https://stats.uk.trikdis.com/script.js"
+              data-website-id="965949ea-0b4f-40bc-b5f1-3e04208b3492"/>
+    </xpath>
+  </template>
+
 </odoo>

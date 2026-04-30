@@ -129,7 +129,12 @@ def post_install(env):
         head = website.custom_code_head or ''
         hide_css = '<style>.o_brand_promotion{display:none!important}</style>'
         if hide_css not in head:
-            website.write({'custom_code_head': head + '\n' + hide_css})
+            head = head + '\n' + hide_css
+
+        website.write({'custom_code_head': head})
+        # Note: Umami analytics script is injected via QWeb template
+        # (trikdis_b2b.umami_tracking) rather than custom_code_head because
+        # Odoo's Html field sanitiser strips <script> tags on write.
 
     # ------------------------------------------------------------------
     # 6b. Sweep all page views that still link to trikdis.com privacy policy
