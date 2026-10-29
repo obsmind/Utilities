@@ -36,10 +36,12 @@ Recordings and transcripts go to `~/Documents/Call recordings/` (override with
 
 ## Traps
 
-- **Switch the output back after the call.** While the Multi-Output Device is the
-  default output, apps that use macOS voice processing on the mic (echo cancellation)
-  can fail to start their audio: TypeWhisper dictation failed with avfaudio error
-  560227702 ('!dev') on 2026-10-29 until the output was changed back.
+- **Dictation apps and the Multi-Output Device.** Apps that turn on macOS voice
+  processing (echo cancellation) on the mic can fail to start while the Multi-Output
+  Device is the default output. TypeWhisper 1.8.1 did, with avfaudio error 560227702
+  ('!dev'), but only because its microphone was left on the system default; choosing
+  the microphone explicitly in its settings fixed it (2026-10-29). Superwhisper was
+  unaffected. Otherwise, switch the output back after the call.
 
 - **The mic channel is the Mac's built-in microphone.** If you take the call on
   AirPods or a headset mic, your side is recorded from the built-in mic instead, which
